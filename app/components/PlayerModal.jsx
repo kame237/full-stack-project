@@ -34,7 +34,7 @@ const PlayerModal = ({ isOpen, player, onClose }) => {
             className="fixed inset-0 bg-black/80 backdrop-blur-md z-50"
           />
           
-          {/* Modal principal avec effet 3D */}
+          {/* Modal principal avec effet 3D - CORRIGÉ POUR LE CENTRAGE */}
           <motion.div
             initial={{ scale: 0.7, opacity: 0, y: 100, rotateX: -30 }}
             animate={{ scale: 1, opacity: 1, y: 0, rotateX: 0 }}
@@ -45,8 +45,11 @@ const PlayerModal = ({ isOpen, player, onClose }) => {
               stiffness: 280,
               duration: 0.5
             }}
-            className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 w-[95vw] max-w-lg max-h-[90vh] overflow-y-auto"
-            style={{ perspective: '1000px' }}
+            className="fixed top-1/2 left-1/2 z-50 w-[95vw] max-w-lg max-h-[90vh] overflow-y-auto"
+            style={{ 
+              transform: 'translate(-50%, -50%)',
+              perspective: '1000px'
+            }}
           >
             <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 to-slate-800 border border-white/20 shadow-2xl">
               
